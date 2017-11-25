@@ -13,3 +13,7 @@
                 x = location.href = "collection.php";
             }
             
+             function artButton() {
+                var x = document.getElementById("img");
+                x = location.href = "painting.php";
+            }

@@ -52,9 +52,7 @@ $result = $con->query($sql);
 
 for ($p = 0; $p < $result->num_rows; $p++) {
     $row = $result->fetch_assoc();
-    echo "<img id='painting' src=" . $row['images_painting'] . ">";
+    echo "<img id='painting' onclick='artButton()' src=". $row['images_painting'].">";
 //    mysqli_free_result($result);
 }
-
-//echo "<img id='painting' src=" . $row['images_painting'] . " style='width:200px'>";
 ?>
