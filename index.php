@@ -12,16 +12,14 @@ session_start();
         <style>
 
 
-            body {
+/*            body {
                 font-family:Arial;
-                /*background-image:url("/paard.jpg");*/
                 display:block;
                 position: fixed; left: 0; top: 0;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: black;
-            }
-
+            }*/
             #index{
                 font-family:Arial;
                 font-size: 150px;
@@ -29,7 +27,9 @@ session_start();
                 background:gainsboro;
                 padding-left: 110px;
                 padding-right: 110px;
+                position: fixed; left: 0; top: 10px;
             }
+
             #wit {
                 background: white;
                 width: 450px;
@@ -60,13 +60,13 @@ session_start();
                 color: black; 
             }
             #buttonloc{
-                padding: 15px 32px;
+                padding: 15px 25px;
                 margin: 400px 300px;
                 border-radius:15px;
                 background:gainsboro;
             }
             #buttoncol{
-                padding: 15px 32px;
+                padding: 15px 25px;
                 margin: 400px 300px;
                 border-radius:15px;
                 background: whitesmoke;
@@ -90,23 +90,15 @@ session_start();
                 </form>-->
 
         <form>
-            <header><input id=index onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
+            <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
         </form>
-        <!--        <form>
-                    <input onClick="locationButton()" type="button" value="LOCATION">
-                    <input onClick="collectionButton()" type="button" Value="COLLECTION">
-                </form>-->
-
 
         <div id="wit">
-            <button type="button" id="buttonloc" onclick="locationButton()">Location</button>
+            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
         </div>  
-
-
         <div id="grijs">
-            <button type="button" id="buttoncol" onclick="collectionButton()">Collection</button>
+            <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
         </div> 
-
 
     </body>
 </html>

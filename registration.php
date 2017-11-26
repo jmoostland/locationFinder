@@ -22,9 +22,6 @@ if (isset($_REQUEST['artId'])) {
                 font-family:Arial;
             }
         </style>
-        
-      
-        
     </head>
     <body>
         

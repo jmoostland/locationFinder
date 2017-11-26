@@ -9,30 +9,41 @@ include 'connection.php';
     <head>
         <meta charset="UTF-8">
         <title>Collection</title>
-
+        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">  
         <script src="functions.js"></script>
 
         <style>
             #painting{
                 justify-content:space-around;
-                width:220px;
-                margin-top:70px;
+                width:250px;
+                margin-top:30px;
                 flex-direction: row;
-                margin-left: 280px;
+                margin-left: 180px;
                 margin-right: 15px;
+            }
+            #index{
+                font-family:Arial;
+                font-size: 150px;
+                border-radius:15px;
+                background:gainsboro;
+                padding-left: 110px;
+                padding-right: 110px;
+                position: fixed; left: 0; top: 10px;
+            }
+            #buttonloc{
+                padding: 15px 32px;
+                margin: 80px 50px;
+                border-radius:10px;
+                background: whitesmoke;
+                box-shadow: 5px 5px 2px #333333;
             }
         </style>
     </head>
     <body>
         <form>
-            <input onClick="indexButton()" type="button" Value="LOCATION FINDER">
+            <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
+            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
         </form>
-        <form>
-            <!--<input onClick="indexButton()" type="button" Value="HOME">-->
-            <input onClick="locationButton()" type="button" value="LOCATION">
-            <input onClick="collectionButton()" type="button" Value="COLLECTION">
-        </form>
-
     </body>
 
 </html>
@@ -53,7 +64,7 @@ $result = $con->query($sql);
 
 for ($p = 0; $p < $result->num_rows; $p++) {
     $row = $result->fetch_assoc();
-    echo "<img id='painting' onclick='artButton()' src=". $row['images_painting'].">";
+    echo "<img id='painting' onclick='artButton()' src=" . $row['images_painting'] . ">";
 //    mysqli_free_result($result);
 }
 ?>
