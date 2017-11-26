@@ -9,13 +9,17 @@ session_start();
         <script src="functions.js"></script>
         <style>
             body {
-                font-family:Georgia;
-                background-image:url("plattegrond.jpg");
-                display:block;
-                position: fixed; left: 0; top: 0;
-                background-repeat: no-repeat;
-                background-size: cover;
                 background-color: black;
+                font-family:Arial;
+                background-image:url("unreal.jpg");
+                display:block;
+                position:fixed; left: 0; top: 0;
+                background-repeat: no-repeat;
+                /*background-size: cover;*/
+                background-size: 700px;
+                background-position-x: 450px;
+                background-position-y: 200px;
+                
             }
         </style>
     </head>

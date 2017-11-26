@@ -11,6 +11,7 @@ include 'connection.php';
         <title>Collection</title>
 
         <script src="functions.js"></script>
+
         <style>
             #painting{
                 justify-content:space-around;

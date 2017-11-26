@@ -17,6 +17,13 @@ if (isset($_REQUEST['artId'])) {
 
 <html>
     <head>
+        <style>
+            input{
+                font-family:Arial;
+            }
+        </style>
+        
+      
         
     </head>
     <body>

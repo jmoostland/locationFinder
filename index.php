@@ -10,19 +10,28 @@ session_start();
         <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">   
         <script src="functions.js"></script>
         <style>
-            
+
 
             body {
-                font-family:Georgia;
-                background-image:url("paard.jpg");
+                font-family:Arial;
+                /*background-image:url("/paard.jpg");*/
                 display:block;
                 position: fixed; left: 0; top: 0;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-color: black;
             }
+
+            #index{
+                font-family:Arial;
+                font-size: 150px;
+                border-radius:15px;
+                background:gainsboro;
+                padding-left: 110px;
+                padding-right: 110px;
+            }
             #wit {
-                background: whitesmoke;
+                background: white;
                 width: 450px;
                 height: 450px;
                 background-position: center;
@@ -30,6 +39,10 @@ session_start();
                 position: absolute;
                 top: 250px;
                 left: 300px;
+                background-image:url("unreal.jpg");
+                background-size: 450px;
+                background-repeat: no-repeat;
+
             }
             #grijs{
                 background:gainsboro;
@@ -43,7 +56,7 @@ session_start();
             }
 
             a{
-                font-family:Georgia;
+                font-family:Arial;
                 color: black; 
             }
             #buttonloc{
@@ -58,31 +71,31 @@ session_start();
                 border-radius:15px;
                 background: whitesmoke;
             }
-/*            form{
-                font-family:Georgia;
-                color: black; 
-                padding: 15px 32px;
-                margin: 100px 100px;
-                border-radius:15px;
-                background:gainsboro;
-            }*/
+            /*            form{
+                            font-family:Georgia;
+                            color: black; 
+                            padding: 15px 32px;
+                            margin: 100px 100px;
+                            border-radius:15px;
+                            background:gainsboro;
+                        }*/
         </style>
     </head>
     <body>
         <!--        <?php
-        $search = $_REQUEST['search'];
+//        $search = $_REQUEST['search'];
         ?>
                 <form action="index.php" method="Post"
                       <textarea name="search "></textarea><input type="submit" value="Search"/>
                 </form>-->
-<form>
-            <input onClick="indexButton()" type="button" Value="LOCATION FINDER">
-</form>
+
         <form>
-            <!--<input onClick="indexButton()" type="button" Value="LOCATION FINDER">-->
-            <input onClick="locationButton()" type="button" value="LOCATION">
-            <input onClick="collectionButton()" type="button" Value="COLLECTION">
+            <header><input id=index onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
         </form>
+        <!--        <form>
+                    <input onClick="locationButton()" type="button" value="LOCATION">
+                    <input onClick="collectionButton()" type="button" Value="COLLECTION">
+                </form>-->
 
 
         <div id="wit">
