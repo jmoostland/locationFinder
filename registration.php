@@ -5,18 +5,19 @@ include 'connection.php';
 
 if (isset($_REQUEST['artId'])) {
     $inloggen = new mysqli('localhost', 'root', '', 'kunst');
-   $art_id = $_REQUEST ['artId'];
-   $title = $_REQUEST ['title'];
-   $artist = $_REQUEST ['artist'];
-   $year = $_REQUEST ['year'];
+    $art_id = $_REQUEST ['artId'];
+    $title = $_REQUEST ['title'];
+    $artist = $_REQUEST ['artist'];
+    $year = $_REQUEST ['year'];
     $sql = "INSERT INTO `kunstwerk` (`art_id`, `title`, `artist`, `year`) VALUES ('$art_id', '$title', '$artist', '$year')";
-  $inloggen->query($sql);
+    $inloggen->query($sql);
 }
-
 ?>
 
 <html>
     <head>
+        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">
+        <script src="functions.js"></script>
         <style>
             input{
                 font-family:Arial;
@@ -24,7 +25,12 @@ if (isset($_REQUEST['artId'])) {
         </style>
     </head>
     <body>
-        
+        <form>
+            <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
+            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
+            <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
+        </form>
+
         <form action="registration.php" method="POST">
             <p><strong>Insert Artwork</strong></p><br><br>
             Art ID <input type="text" name="artId" required><br>
@@ -33,14 +39,14 @@ if (isset($_REQUEST['artId'])) {
             Year <input type="text" name="year" required><br>
             <input type="submit" name="registration" value="Insert"><br><br>
         </form>
-        
-                        <?php
+
+        <?php
 //                if ($_FILES) {
 //                    $filename = $_FILES['filename']['name'];
 //                    move_uploaded_file($_FILES['filename']['tmp_name'], $filename);
 //                    echo "Uploaded image '$filename'<br><img src='$filename'>";
 //                }
-                ?>
-        
+        ?>
+
     </body>
 </html>

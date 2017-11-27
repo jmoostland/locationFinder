@@ -14,9 +14,13 @@
                 x = location.href = "collection.php";
             }
             
+            function registrationButton() {
+                var x = document.getElementById("buttonreg");
+                x = location.href = "registration.php";
+            }
+            
              function artButton(a) {
                 var x = document.getElementById("img");
                 console.log(x);
-//                x = location.href = "painting.php?vraagnummer="+a;
                 x = location.href = "painting.php?id="+a;
             }

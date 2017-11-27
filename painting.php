@@ -33,6 +33,13 @@ include 'connection.php';
                 background: whitesmoke;
                 box-shadow: 5px 5px 2px #333333;
             }
+            #buttonreg{
+                padding: 15px 32px;
+                margin: 80px 50px;
+                border-radius:10px;
+                background: whitesmoke;
+                box-shadow: 5px 5px 2px #333333;
+            }
         </style>
     </head>
     <body>
@@ -40,6 +47,7 @@ include 'connection.php';
             <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
+            <button type="button" id="buttonreg" onclick="registrationButton()">ADD NEW ARTWORK</button>
         </form>
 
     </body>
@@ -51,25 +59,34 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-$id = $_REQUEST['id'];
+
+$sql = "SELECT * FROM `location`";
+$result = $con->query($sql);
+if ($row =$result->fetch_assoc()) {
+echo "Location:".$row['location']."<br>";
+}
+
+$id = $_REQUEST['id']; //zie ook function artButton
 //}
 //echo $id;
 
 
-$sql = sprintf("select * from kunstwerk where id = '%d'",$id    );
+$sql = sprintf("select * from kunstwerk where id = '%d'", $id);
+
 //echo $sql;
 $result = $con->query($sql);
 //echo "<br>";
 //var_dump($result);
 
-    
- while ($row = mysqli_fetch_array($result)) {
-    echo "Artwork ID:" . $row['art_id']. "<br>" . " Title:" . $row['title']. "<br>" . "Artist:" . $row['artist']. "<br>" . "Year:" . $row['year'] . "<br>";
-    echo "<img id='painting' onclick='artButton(".$row['id'].")' src=" . $row['images_painting'] . ">";
+
+while ($row = mysqli_fetch_array($result)) {
+    echo "Artwork ID:" . $row['art_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
+    echo "<img id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
 }
 
-//}
-//
+
+
+
 //$sql = "SELECT `art_id`, `title`, `artist`, `year`  FROM `kunstwerk`";
 //$result = $con->query($sql);
 //
