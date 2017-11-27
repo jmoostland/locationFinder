@@ -14,7 +14,9 @@
                 x = location.href = "collection.php";
             }
             
-             function artButton() {
+             function artButton(a) {
                 var x = document.getElementById("img");
-                x = location.href = "painting.php";
+                console.log(x);
+//                x = location.href = "painting.php?vraagnummer="+a;
+                x = location.href = "painting.php?id="+a;
             }

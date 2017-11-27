@@ -40,14 +40,12 @@ include 'connection.php';
         </style>
     </head>
     <body>
-        <form>
+        <form name="iets" action="painting.php" method="GET">
             <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
         </form>
     </body>
-
 </html>
-
 <?php
 //
 //     $sql = "SELECT * FROM `kunstwerk`";
@@ -59,12 +57,14 @@ include 'connection.php';
 $con = new mysqli('localhost', 'root', '', 'kunst');
 
 
-$sql = "SELECT `images_painting` FROM `kunstwerk`";
+$sql = "SELECT * FROM `kunstwerk`"; //bij de echo zeg je wat je uit kunstwerk wilt hebben, het is niet nodig om dit te specificeren.
 $result = $con->query($sql);
 
 for ($p = 0; $p < $result->num_rows; $p++) {
     $row = $result->fetch_assoc();
-    echo "<img id='painting' onclick='artButton()' src=" . $row['images_painting'] . ">";
+    echo "<img id='painting' onclick='artButton(".$row['id'].")' src=" . $row['images_painting'] . ">";
 //    mysqli_free_result($result);
 }
+
 ?>
+
