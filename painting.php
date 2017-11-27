@@ -60,11 +60,11 @@ if ($con->connect_error) {
 }
 
 
-$sql = "SELECT * FROM `location`";
-$result = $con->query($sql);
-if ($row =$result->fetch_assoc()) {
-echo "Location:".$row['location']."<br>";
-}
+//$sql = "SELECT * FROM `location`";
+//$result = $con->query($sql);
+//if ($row =$result->fetch_assoc()) {
+//echo "Location:".$row['location']."<br>";
+//}
 
 $id = $_REQUEST['id']; //zie ook function artButton
 //}
@@ -80,7 +80,7 @@ $result = $con->query($sql);
 
 
 while ($row = mysqli_fetch_array($result)) {
-    echo "Artwork ID:" . $row['art_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
+    echo "Artwork ID:" . $row['sign'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
     echo "<img id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
 }
 

@@ -5,11 +5,11 @@ include 'connection.php';
 
 if (isset($_REQUEST['artId'])) {
     $inloggen = new mysqli('localhost', 'root', '', 'kunst');
-    $art_id = $_REQUEST ['artId'];
+    $sign = $_REQUEST ['artId'];
     $title = $_REQUEST ['title'];
     $artist = $_REQUEST ['artist'];
     $year = $_REQUEST ['year'];
-    $sql = "INSERT INTO `kunstwerk` (`art_id`, `title`, `artist`, `year`) VALUES ('$art_id', '$title', '$artist', '$year')";
+    $sql = "INSERT INTO `kunstwerk` (`sign`, `title`, `artist`, `year`) VALUES ('$sign', '$title', '$artist', '$year')";
     $inloggen->query($sql);
 }
 ?>
