@@ -8,6 +8,7 @@ session_start();
         <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">   
         <script src="functions.js"></script>
         <style>
+
             #col{
                 margin-top: 100 px;
             }
@@ -38,30 +39,31 @@ session_start();
                 background: whitesmoke;
                 box-shadow: 5px 5px 2px #333333;
             }
-            a{
-                margin: 30px 380px;
+            img{
+                 float: left;
+                 margin-left: 80px;
+                 margin-right: 50px;
+                 border-radius:15px;
             }
-            a.hover{
-                background-color: yellow;
+            p:hover{
+                color: lightgray;
             }
-
         </style>
     </head>
     <body>
         <form>
             <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
-
-
         </form>
 
         <a> <img src="unreal.jpg" width="745" alt="Gallery" usemap="#locationmap">
             <map name="locationmap">
-                <area shape="rect" coords="250,250,90,90" href="cafe.php" alt="Cafe">
+                <area class="hovershape" shape="rect" coords="250,250,90,90" href="cafe.php" alt="Cafe">
                 <area shape="rect" coords="450,150,330,390" href="foyer.php" alt="Foyer">
                 <area shape="rect" coords="50,300,230,590" href="entrance.php" alt="Entrance">
                 <area shape="rect" coords="650,230,430,390" href="shop.php" alt="Shop">
             </map></a>
+        <p>Use the map to go to the different locations.</p>
     </body>
 
 </html>
