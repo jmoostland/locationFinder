@@ -60,11 +60,12 @@ if ($con->connect_error) {
 }
 
 
-//$sql = "SELECT * FROM `location`";
-//$result = $con->query($sql);
-//if ($row =$result->fetch_assoc()) {
-//echo "Location:".$row['location']."<br>";
-//}
+$sql = "SELECT * FROM `linktable`";
+$result = $con->query($sql);
+if ($row =$result->fetch_assoc()) {
+echo "Location:".$row['location_id']."<br>";
+echo "<option value='".$row['location_id']."'>".$row['location_id']."</option>";
+}
 
 $id = $_REQUEST['id']; //zie ook function artButton
 //}

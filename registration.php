@@ -9,7 +9,8 @@ if (isset($_REQUEST['artId'])) {
     $title = $_REQUEST ['title'];
     $artist = $_REQUEST ['artist'];
     $year = $_REQUEST ['year'];
-    $sql = "INSERT INTO `kunstwerk` (`sign`, `title`, `artist`, `year`) VALUES ('$sign', '$title', '$artist', '$year')";
+    $images_painting = $_FILES['images_painting']['name'];
+    $sql = "INSERT INTO `kunstwerk` (`sign`, `title`, `artist`, `year`,`images_painting`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting')";
     $inloggen->query($sql);
 }
 ?>
@@ -31,21 +32,24 @@ if (isset($_REQUEST['artId'])) {
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
         </form>
 
-        <form action="registration.php" method="POST">
+        <form action="registration.php" method="POST" enctype='multipart/form-data'>
+                    
             <p><strong>Insert Artwork</strong></p><br><br>
             Art ID <input type="text" name="artId" required><br>
             Title <input type="text" name="title" required><br>
             Artist <input type="text" name="artist" required><br>
             Year <input type="text" name="year" required><br>
-            <input type="submit" name="registration" value="Insert"><br><br>
+           
+            <td>Select Photo: </td><td><input type='file' name='images_painting' size='10'>
+                 <input type="submit" name="registration" value="Insert"><br><br>
         </form>
 
         <?php
-//                if ($_FILES) {
-//                    $filename = $_FILES['filename']['name'];
-//                    move_uploaded_file($_FILES['filename']['tmp_name'], $filename);
-//                    echo "Uploaded image '$filename'<br><img src='$filename'>";
-//                }
+                if ($_FILES) {
+            $images_painting = $_FILES['images_painting']['name'];
+            move_uploaded_file($_FILES['images_painting']['tmp_name'], $images_painting);
+            echo "Uploaded image '$images_painting'<br><img src='$images_painting'>";
+        }
         ?>
 
     </body>

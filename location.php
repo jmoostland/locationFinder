@@ -14,7 +14,7 @@ session_start();
             body {
                 /*background-color: black;*/
                 font-family:Arial;
-                background-image:url("unreal.jpg");
+                /*                background-image:url("unreal.jpg");*/
                 display:block;
                 /*position:fixed; left: 0; top: 0;*/
                 background-repeat: no-repeat;
@@ -39,7 +39,10 @@ session_start();
                 box-shadow: 5px 5px 2px #333333;
             }
             a{
-                margin: 80px 50px;
+                margin: 30px 380px;
+            }
+            a.hover{
+                background-color: yellow;
             }
 
         </style>
@@ -48,10 +51,17 @@ session_start();
         <form>
             <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
-            
-            <a href="foyer.php">Foyer</a>
+
+
         </form>
 
+        <a> <img src="unreal.jpg" width="745" alt="Gallery" usemap="#locationmap">
+            <map name="locationmap">
+                <area shape="rect" coords="250,250,90,90" href="cafe.php" alt="Cafe">
+                <area shape="rect" coords="450,150,330,390" href="foyer.php" alt="Foyer">
+                <area shape="rect" coords="50,300,230,590" href="entrance.php" alt="Entrance">
+                <area shape="rect" coords="650,230,430,390" href="shop.php" alt="Shop">
+            </map></a>
     </body>
 
 </html>
@@ -67,7 +77,7 @@ $sql = "SELECT * FROM `linkTable`";
 $result = $con->query($sql);
 for ($p = 0; $p < $result->num_rows; $p++) {
     $row = $result->fetch_assoc();
-    echo "Location:" . $row['location_id'] . "<br>"."Art ID:" . $row['sign_id'] . "<br>";
+    echo "Location:" . $row['location_id'] . "<br>" . "Art ID:" . $row['sign_id'] . "<br>";
 }
 
 

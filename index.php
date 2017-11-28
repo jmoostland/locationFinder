@@ -51,6 +51,8 @@ session_start();
                 background-position: center;
                 border-radius:15px;
                 position: absolute;
+                background-image:url("imagePainting/warmerdam-lift.jpg");
+                background-size: 400px;
                 top: 250px;
                 left: 800px;
             }
