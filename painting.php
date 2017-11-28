@@ -40,6 +40,7 @@ include 'connection.php';
                 background: whitesmoke;
                 box-shadow: 5px 5px 2px #333333;
             }
+
         </style>
     </head>
     <body>
@@ -59,12 +60,11 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-
 $sql = "SELECT * FROM `linktable`";
 $result = $con->query($sql);
-if ($row =$result->fetch_assoc()) {
-echo "Location:".$row['location_id']."<br>";
-echo "<option value='".$row['location_id']."'>".$row['location_id']."</option>";
+if ($row = $result->fetch_assoc()) {
+    echo "Location:" . $row['location_id'] . "<br>";
+    echo "<option value='" . $row['location_id'] . "'>" . $row['location_id'] . "</option>";
 }
 
 $id = $_REQUEST['id']; //zie ook function artButton

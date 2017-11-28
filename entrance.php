@@ -5,12 +5,10 @@ include 'connection.php';
 include 'dry.php';
 ?>
 
-
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Entrance</title>
-
     </head>
     <body>
 
@@ -36,18 +34,11 @@ if ($con->connect_error) {
 $sql = "SELECT `images_painting`
 FROM `kunstwerk`
 WHERE EXISTS (SELECT `location_id` FROM `linktable` WHERE`location_id`='Entrance'
-AND `kunstwerk`.`sign_id`=`linktable`.`sign_id`)"; //laat de linken van de schilderijen zien die op deze locatie zijn te vinden
+AND `kunstwerk`.`sign_id`=`linktable`.`sign_id`)";
 $result = $con->query($sql);
-echo "<tr>";
 for ($x = 0; $x < $result->num_rows; $x++) {
     $row = $result->fetch_assoc();
-    echo $row['images_painting'];
-    echo "<br>";
+    echo "<img id='painting' src=".$row['images_painting'].">";
 }
-
         
 ?>
-
-
-
-<!--SELECT kunstwerk.*, linktable.*  FROM kunstwerk  INNER JOIN linktable ON kunstwerk.sign_id = linktable.sign_id;-->

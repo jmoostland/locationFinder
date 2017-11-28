@@ -19,7 +19,7 @@ $returnString = <<<HEADSTRING
                     margin: 80px 50px;
                     border-radius:10px;
                     background: whitesmoke;
-                    box-shadow: 5px 5px 2px #333333;
+                    box-shadow: 5px 5px 2px #333333;        
                 }
                 #buttoncol{
                     padding: 15px 32px;

@@ -13,14 +13,14 @@ include 'connection.php';
         <script src="functions.js"></script>
 
         <style>
-            #painting{
+/*            #painting{
                 justify-content:space-around;
                 width:250px;
                 margin-top:30px;
                 flex-direction: row;
                 margin-left: 180px;
                 margin-right: 15px;
-            }
+            }*/
             #index{
                 font-family:Arial;
                 font-size: 150px;
