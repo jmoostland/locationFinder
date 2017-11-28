@@ -10,7 +10,7 @@ if (isset($_REQUEST['artId'])) {
     $artist = $_REQUEST ['artist'];
     $year = $_REQUEST ['year'];
     $images_painting = $_FILES['images_painting']['name'];
-    $sql = "INSERT INTO `kunstwerk` (`sign`, `title`, `artist`, `year`,`images_painting`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting')";
+    $sql = "INSERT INTO `kunstwerk` (`sign_id`, `title`, `artist`, `year`,`images_painting`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting')";
     $inloggen->query($sql);
 }
 ?>

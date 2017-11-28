@@ -1,5 +1,18 @@
 <?php
+session_start();
 
-echo "cafe";
-
+include 'connection.php';
+include 'dry.php';
 ?>
+
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cafe</title>
+
+    </head>
+    <body>
+
+    </body>
+</html>

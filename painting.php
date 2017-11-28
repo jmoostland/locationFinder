@@ -81,7 +81,7 @@ $result = $con->query($sql);
 
 
 while ($row = mysqli_fetch_array($result)) {
-    echo "Artwork ID:" . $row['sign'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
+    echo "Artwork ID:" . $row['sign_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
     echo "<img id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
 }
 

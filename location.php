@@ -13,15 +13,13 @@ session_start();
                 margin-top: 100 px;
             }
             body {
-                /*background-color: black;*/
                 font-family:Arial;
-                /*                background-image:url("unreal.jpg");*/
                 display:block;
-                /*position:fixed; left: 0; top: 0;*/
+/*   
                 background-repeat: no-repeat;
                 background-size: 800px;
                 background-position-x: 450px;
-                background-position-y: 200px;
+                background-position-y: 200px;*/
             }
             #index{
                 font-family:Arial;
