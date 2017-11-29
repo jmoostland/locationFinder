@@ -36,25 +36,43 @@ if (isset($_REQUEST['artId'])) {
             <!--            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
                         <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>-->
         </form>
-
-        <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()">
-<table cellspacing="2" cellpadding="2" border="0">
+        <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()"></form>
+        <table cellspacing="2" cellpadding="2" border="0">
             <p><strong>Insert Artwork</strong></p><br><br>
-            Art ID <input type="text" name="artId" required><br>
-            Title <input type="text" name="title" required><br>
-            Artist <input id="artistname" onkeyup="onKeyUpp()" type="text" name="artist" required><br>
-            Year <input type="text" name="year" required><br>
-            Select Photo <input type='file' name='images_painting' size='10'><br>
-            Materials <input type="checkbox" name='materials' value="Oil">Oil<br>
-            <input type="checkbox" name='materials' value="Photo">Photo<br> 
-            <input type="checkbox" name='materials' value="Other">Other<br> 
-            Medium <input type="radio" name="medium" value="Painting"> Painting<br>
-            <input type="radio" name="medium" value="Work on paper"> Work on paper<br>
-            <input type="radio" name="medium" value="Other"> Other<br>
-            More information <textarea type='text' rows="4"cols="20" name='information' ></textarea><br>
-            <input type="submit" name="registration" value="Insert"><br><br>
-        </form>
-</table>
+            <tr>
+                <td>Art ID</td><td> <input type="text" name="artId" required><br></td>
+            </tr>
+            <tr>
+                <td>Title</td><td> <input type="text" name="title" required><br></td>
+            </tr>
+            <tr>
+                <td>Artist</td><td> <input id="artistname" onkeyup="onKeyUpp()" type="text" name="artist" required><br></td>
+            </tr>
+            <tr>
+                <td>Year</td><td> <input type="text" name="year" required><br></td>
+            </tr>
+            <tr>
+                <td>Select Photo</td><td><input type='file' name='images_painting' size='10'><br></td>
+            </tr>
+            <tr> 
+                <td>Materials</td><td><input type="checkbox" name='materials' value="Oil">Oil<br>
+                <input type="checkbox" name='materials' value="Photo">Photo<br>
+                <input type="checkbox" name='materials' value="Other">Other<br></td>
+            </tr>
+            <tr> 
+                <td>Medium</td><td><input type="radio" name="medium" value="Painting"> Painting<br>
+                <input type="radio" name="medium" value="Work on paper"> Work on paper<br>
+               <input type="radio" name="medium" value="Other"> Other<br></td>
+            </tr>
+            <tr>
+                <td>More information</td><td><textarea type='text' rows="4"cols="20" name='information' ></textarea><br></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="registration" value="Insert"><br><br></td>
+            </tr>
+        </table>
+
+
 
         <?php
         if ($_FILES) {
