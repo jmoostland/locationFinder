@@ -36,14 +36,24 @@ $result = $con->query($sql);
 for ($x = 0; $x < $result->num_rows; $x++) {
     $row = $result->fetch_assoc();
     echo "<img id='painting' src=".$row['images_painting'].">";
-}
-        
 
-if(isset($_REQUEST["change"])){
-    $change=$_REQUEST["change"];
-    $query= mysqli_query("select *from linktable where sign_id=$change");
-    $row=mysql_fetch_array($query);
+for ($p = 0; $p < $result->num_rows; $p++) {
+    $row = $result->fetch_assoc();
+    echo "<img id='painting' onclick='artButton(".$row['change'].")' src=" . $row['images_painting'] . ">";
 }
+}
+
+
+
+
+
+
+
+//if(isset($_REQUEST["change"])){
+//    $change=$_REQUEST["change"];
+//    $query= mysqli_query("select *from linktable where sign_id=$change");
+//    $row=mysql_fetch_array($query);
+//}
 
 //if(isset($_REQUEST['update'])){    
 //    $mode = $_REQUEST['location_id'];
@@ -55,14 +65,14 @@ if(isset($_REQUEST["change"])){
 ?>
 
     <body>
-<form method="POST" action="">
-<select name="maintenance_mode">
+<form name='location' method="POST" action="">
+<!--<select name="maintenance_mode">
   <option value = "Entrance">Entrance</option>
   <option value = "Foyer">Foyer</option>
   <option value = "Cafe">Cafe</option>
   <option value = "Shop">Shop</option>
 </select>
-<button type="submit" name="update">Change Location</button>
+<button type="submit" name="update">Change Location</button>-->
 
 </form>
     </body>
