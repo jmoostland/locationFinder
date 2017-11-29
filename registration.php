@@ -29,24 +29,24 @@ if (isset($_REQUEST['artId'])) {
     <body>
         <form>
             <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
-<!--            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
-            <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>-->
+            <!--            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
+                        <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>-->
         </form>
 
-        <form action="registration.php" method="POST" enctype='multipart/form-data'>
-                    
+        <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()">
+
             <p><strong>Insert Artwork</strong></p><br><br>
             Art ID <input type="text" name="artId" required><br>
             Title <input type="text" name="title" required><br>
-            Artist <input type="text" name="artist" required><br>
+            Artist <input id="artistname" onkeyup="onKeyUpp()" type="text" name="artist" required><br>
             Year <input type="text" name="year" required><br>
             <!--<textarea name="noteContents" id="noteContents"></textarea><br>--> nog toevoegen aan table
             <td>Select Photo: </td><td><input type='file' name='images_painting' size='10'>
-                 <input type="submit" name="registration" value="Insert"><br><br>
+                <input type="submit" name="registration" value="Insert"><br><br>
         </form>
 
         <?php
-                if ($_FILES) {
+        if ($_FILES) {
             $images_painting = $_FILES['images_painting']['name'];
             move_uploaded_file($_FILES['images_painting']['tmp_name'], $images_painting);
             echo "Uploaded image '$images_painting'<br><img src='$images_painting'>";

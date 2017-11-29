@@ -11,7 +11,6 @@ include 'connection.php';
         <title>Collection</title>
         <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">  
         <script src="functions.js"></script>
-
         <style>
 /*            #painting{
                 justify-content:space-around;
