@@ -11,9 +11,13 @@ if (isset($_REQUEST['artId'])) {
     $artist = $_REQUEST ['artist'];
     $year = $_REQUEST ['year'];
     $images_painting = $_FILES['images_painting']['name'];
-    $sql = "INSERT INTO `kunstwerk` (`sign_id`, `title`, `artist`, `year`,`images_painting`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting')";
+    $information = $_REQUEST ['information'];
+    $materials = $_REQUEST ['materials'];
+    $medium = $_REQUEST ['medium'];
+    $sql = "INSERT INTO `kunstwerk` (`sign_id`, `title`, `artist`, `year`,`images_painting`,`information`,`materials`,`medium`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting', '$information', '$materials', '$medium')";
     $inloggen->query($sql);
 }
+//    foreach ($materials as $mat){}
 ?>
 
 <html>
@@ -34,16 +38,23 @@ if (isset($_REQUEST['artId'])) {
         </form>
 
         <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()">
-
+<table cellspacing="2" cellpadding="2" border="0">
             <p><strong>Insert Artwork</strong></p><br><br>
             Art ID <input type="text" name="artId" required><br>
             Title <input type="text" name="title" required><br>
             Artist <input id="artistname" onkeyup="onKeyUpp()" type="text" name="artist" required><br>
             Year <input type="text" name="year" required><br>
-            <!--<textarea name="noteContents" id="noteContents"></textarea><br>--> nog toevoegen aan table
-            <td>Select Photo: </td><td><input type='file' name='images_painting' size='10'>
-                <input type="submit" name="registration" value="Insert"><br><br>
+            Select Photo <input type='file' name='images_painting' size='10'><br>
+            Materials <input type="checkbox" name='materials' value="Oil">Oil<br>
+            <input type="checkbox" name='materials' value="Photo">Photo<br> 
+            <input type="checkbox" name='materials' value="Other">Other<br> 
+            Medium <input type="radio" name="medium" value="Painting"> Painting<br>
+            <input type="radio" name="medium" value="Work on paper"> Work on paper<br>
+            <input type="radio" name="medium" value="Other"> Other<br>
+            More information <textarea type='text' rows="4"cols="20" name='information' ></textarea><br>
+            <input type="submit" name="registration" value="Insert"><br><br>
         </form>
+</table>
 
         <?php
         if ($_FILES) {

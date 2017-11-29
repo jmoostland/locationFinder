@@ -95,7 +95,7 @@ include 'connection.php';
 
         ?>
         <!--<a href="painting.php"></a>-->
-        <form method="POST" action=""> //name='location'
+        <form method="POST" action="">
             <select name="location">
                 <option value = "Entrance">Entrance</option>
                 <option value = "Foyer">Foyer</option>

@@ -42,13 +42,3 @@ function normalPainting(x) {
     x.style.width = "200px";
 }
 
-function updateButton(c) {
-    var x = document.getElementById("location_id");
-    console.log(x);
-    x = location.href = "edit.php?location_id=" + c;
-}
-function location(b) {
-    var x = document.getElementById("img");
-    console.log(x);
-    x = location.href = "entrance.php?change=" + b;
-}
