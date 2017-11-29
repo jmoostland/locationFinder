@@ -10,10 +10,7 @@ include 'dry.php';
         <meta charset="UTF-8">
         <title>Entrance</title>
     </head>
-    <body>
 
-    </body>
-</html>
 
 <?php
 $con = new mysqli('localhost', 'root', '', 'kunst');
@@ -41,4 +38,34 @@ for ($x = 0; $x < $result->num_rows; $x++) {
     echo "<img id='painting' src=".$row['images_painting'].">";
 }
         
+
+if(isset($_REQUEST["change"])){
+    $change=$_REQUEST["change"];
+    $query= mysqli_query("select *from linktable where sign_id=$change");
+    $row=mysql_fetch_array($query);
+}
+
+//if(isset($_REQUEST['update'])){    
+//    $mode = $_REQUEST['location_id'];
+//    $sql = "update linktable set location_id = '".$mod."' ";
+//    mysqli_query($sql);
+//}
+
+//UPDATE `linktable` SET `location_id`='entrance' WHERE `location_id`='foyer'
 ?>
+
+    <body>
+<form method="POST" action="">
+<select name="maintenance_mode">
+  <option value = "Entrance">Entrance</option>
+  <option value = "Foyer">Foyer</option>
+  <option value = "Cafe">Cafe</option>
+  <option value = "Shop">Shop</option>
+</select>
+<button type="submit" name="update">Change Location</button>
+
+</form>
+    </body>
+</html>
+
+
