@@ -55,13 +55,8 @@ include 'connection.php';
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
         }
-
-
-//        if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id']; //zie ook function artButton
-//        } else {
-//            $id = 0;
-//        }
+
 
         $sql = sprintf("select * from kunstwerk where id = '%d'", $id);
         $result = $con->query($sql);
@@ -80,9 +75,6 @@ include 'connection.php';
             echo "<img onmouseover='bigPainting(this)' onmouseout='normalPainting(this)' id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
             $zoekIdSchilderij = $row['sign_id'];
 
-//        echo "<br> zoekschilderij is :";
-//        echo $zoekIdSchilderij;
-
         $_SESSION['zoekIdSchilderij'] = $zoekIdSchilderij;
         ?>
         <form method="GET" action="edit.php">
@@ -91,10 +83,11 @@ include 'connection.php';
                 <option value = "Foyer">Foyer</option>
                 <option value = "Cafe">Cafe</option>
                 <option value = "Shop">Shop</option>
+                <option value = "Stockroom">Stockroom</option>
             </select>
             <input type=submit>
 
-            <!--<button href=edit.php?location_id=" .$row['location_id'] onclick="updateButton" type="submit" name="update">Change Location</button>-->
+
 
 
 
@@ -115,20 +108,7 @@ include 'connection.php';
                 }
             }
 
-            function werkVoorraadBij($pItem, $pAmountBijBoeken, $afby) {
-                if ($pAmountBijBoeken > 0) {
-                    $sql = sprintf("UPDATE `item` SET `stock` =  `stock` +  %d WHERE  `item`.`item` = %d ", $pAmountBijBoeken, $pItem);
-                }
-                if ($pAmountBijBoeken < 0) {
-                    $sql = sprintf("UPDATE `item` SET `stock` =  `stock`   %d WHERE  `item`.`item` = %d ", $pAmountBijBoeken, $pItem);
-                }
-                echo $sql;
-                echo "<br>";
-                $conn = connectToDb();
-                if (!$conn->query($sql)) {
-                    verwerkError(sprintf("Errormessage: [139]  %s\n", $conn->error));
-                }
-            }
+
 
 //                        echo "<td><a href=\"edit.php?id=$result[id]\">Edit</a></td>";
 //}        

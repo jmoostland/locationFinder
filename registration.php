@@ -1,4 +1,6 @@
-<?php
+
+
+<?php 
 session_start();
 
 include 'connection.php';
@@ -17,7 +19,7 @@ if (isset($_REQUEST['artId'])) {
     $sql = "INSERT INTO `kunstwerk` (`sign_id`, `title`, `artist`, `year`,`images_painting`,`information`,`materials`,`medium`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting', '$information', '$materials', '$medium')";
     $inloggen->query($sql);
 }
-//    foreach ($materials as $mat){}
+//   foreach ($materials as $mat){}
 ?>
 
 <html>
@@ -36,7 +38,7 @@ if (isset($_REQUEST['artId'])) {
             <!--            <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
                         <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>-->
         </form>
-        <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()"></form>
+        <form action="registration.php" method="POST" enctype='multipart/form-data' onsubmit="send()">
         <table cellspacing="2" cellpadding="2" border="0">
             <p><strong>Insert Artwork</strong></p><br><br>
             <tr>
@@ -70,7 +72,7 @@ if (isset($_REQUEST['artId'])) {
             <tr>
                 <td><input type="submit" name="registration" value="Insert"><br><br></td>
             </tr>
-        </table>
+        </table></form>
 
 
 

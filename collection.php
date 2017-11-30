@@ -46,13 +46,7 @@ include 'connection.php';
     </body>
 </html>
 <?php
-//
-//     $sql = "SELECT * FROM `kunstwerk`";
-//         $result=mysqli_query($con,$sql);
-//         $row= mysqli_fetch_assoc($result);//maakt van een rij resultaten een associatieve array.
-//    echo $sql;
-//INSERT INTO `kunstwerk` (`id`, `art_id`, `title`, `artist`, `year`, `images_painting`) VALUES (NULL, '1JK', 'Achter glas', 'Johan van der Keuken', '1957', ''), (NULL, '1ZR', 'Cosmopolitans', 'Zeger Reyers', '2006', '');
-//INSERT INTO `kunstwerk` (`id`, `art_id`, `title`, `artist`, `year`, `images_painting`) VALUES (NULL, '1MS', 'Tucson Stake', 'Martina Sauter', '2007', '\\xampp\\htdocs\\locationFinder\\imagePainting');
+
 $con = new mysqli('localhost', 'root', '', 'kunst');
 
 
