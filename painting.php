@@ -62,8 +62,12 @@ include 'connection.php';
             echo "Location:" . $row['location_id'] . "<br>";
 //    echo "<option value='" . $row['location_id'] . "'>" . $row['location_id'] . "</option>";
         }
+        if (isset($_REQUEST['id'])) {
+            $id = $_REQUEST['id']; //zie ook function artButton
+        } else {
+            $id = 0;
+        }
 
-        $id = $_REQUEST['id']; //zie ook function artButton
 //        $location = $_REQUEST['location_id'];
 //}
 //echo $id;
@@ -74,35 +78,28 @@ include 'connection.php';
 //echo "<br>";
 //var_dump($result);
 
-
+        $zoekIdSchilderij = "";
         while ($row = mysqli_fetch_array($result)) {
             echo "Artwork ID:" . $row['sign_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
             echo "<td><a href=delete.php?id=" . $row['id'] . ">Delete</a><td>" . "<br>";
             echo "<img onmouseover='bigPainting(this)' onmouseout='normalPainting(this)' id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
+            $zoekIdSchilderij = $row['sign_id'];
         }
+        echo "<br> zoekschilderij is :";
+        echo $zoekIdSchilderij;
 
-
-        //<input type='button' class="edit_button" id="edit_button<?php echo $row['id']; 
-        ?>" 
-                 <!--value="edit" onclick="edit_row('<?php // echo $row['id'];   ?>');">-->
-
-
-        <!--        if (isset($_POST['location'])){
-                $location=$_POST['location'];
-                if (mysql_query("))
-                }-->
-
-
+        $_SESSION['zoekIdSchilderij'] = $zoekIdSchilderij;
         ?>
-        <!--<a href="painting.php"></a>-->
-        <form method="POST" action="">
-            <select name="location">
+        <form method="GET" action="edit.php">
+            <select name="location_id">
                 <option value = "Entrance">Entrance</option>
                 <option value = "Foyer">Foyer</option>
                 <option value = "Cafe">Cafe</option>
                 <option value = "Shop">Shop</option>
             </select>
-            <button href=edit.php?location_id=" $row['location_id'] onclick="updateButton" type="submit" name="update">Change Location</button>
+            <input type=submit>
+
+            <!--<button href=edit.php?location_id=" .$row['location_id'] onclick="updateButton" type="submit" name="update">Change Location</button>-->
 
 
 
@@ -120,6 +117,21 @@ include 'connection.php';
                     echo "<td>" . $result['location_id'] . "</td>";
                     echo "<td>" . $result['sign_id'] . "</td>";
                     echo "<td><a href=edit.php?location_id=" . $row['location_id'] . ">Edit</a><td>";
+                }
+            }
+
+            function werkVoorraadBij($pItem, $pAmountBijBoeken, $afby) {
+                if ($pAmountBijBoeken > 0) {
+                    $sql = sprintf("UPDATE `item` SET `stock` =  `stock` +  %d WHERE  `item`.`item` = %d ", $pAmountBijBoeken, $pItem);
+                }
+                if ($pAmountBijBoeken < 0) {
+                    $sql = sprintf("UPDATE `item` SET `stock` =  `stock`   %d WHERE  `item`.`item` = %d ", $pAmountBijBoeken, $pItem);
+                }
+                echo $sql;
+                echo "<br>";
+                $conn = connectToDb();
+                if (!$conn->query($sql)) {
+                    verwerkError(sprintf("Errormessage: [139]  %s\n", $conn->error));
                 }
             }
 
