@@ -56,37 +56,32 @@ include 'connection.php';
             die("Connection failed: " . $con->connect_error);
         }
 
-        $sql = "SELECT * FROM `linktable`";
-        $result = $con->query($sql);
-        if ($row = $result->fetch_assoc()) {
-            echo "Location:" . $row['location_id'] . "<br>";
-//    echo "<option value='" . $row['location_id'] . "'>" . $row['location_id'] . "</option>";
-        }
-        if (isset($_REQUEST['id'])) {
+
+//        if (isset($_REQUEST['id'])) {
             $id = $_REQUEST['id']; //zie ook function artButton
-        } else {
-            $id = 0;
-        }
+//        } else {
+//            $id = 0;
+//        }
 
-//        $location = $_REQUEST['location_id'];
-//}
-//echo $id;
         $sql = sprintf("select * from kunstwerk where id = '%d'", $id);
-
-//echo $sql;
         $result = $con->query($sql);
-//echo "<br>";
-//var_dump($result);
+        $row = mysqli_fetch_array($result);
+        
+        $sql = "SELECT * FROM `linktable` WHERE sign_id = '".$row['sign_id']."' ";
+        $result2 = $con->query($sql);
+        if ($row2 = $result2->fetch_assoc()) {
+            echo "Location:" . $row2['location_id'] . "<br>";
+        }
 
         $zoekIdSchilderij = "";
-        while ($row = mysqli_fetch_array($result)) {
+
             echo "Artwork ID:" . $row['sign_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
             echo "<td><a href=delete.php?id=" . $row['id'] . ">Delete</a><td>" . "<br>";
             echo "<img onmouseover='bigPainting(this)' onmouseout='normalPainting(this)' id='painting' onclick='artButton(" . $row['id'] . ")' src=" . $row['images_painting'] . ">";
             $zoekIdSchilderij = $row['sign_id'];
-        }
-        echo "<br> zoekschilderij is :";
-        echo $zoekIdSchilderij;
+
+//        echo "<br> zoekschilderij is :";
+//        echo $zoekIdSchilderij;
 
         $_SESSION['zoekIdSchilderij'] = $zoekIdSchilderij;
         ?>
