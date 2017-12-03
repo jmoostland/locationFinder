@@ -1,19 +1,15 @@
 <?php
 session_start();
-
 include 'connection.php';
 include 'dry.php';
 ?>
-
 
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Shop</title>
     </head>
-    <body>
-
-    </body>
+    <body></body>
 </html>
 <?php
 $con = new mysqli('localhost', 'root', '', 'kunst');
@@ -28,6 +24,6 @@ AND `kunstwerk`.`sign_id`=`linktable`.`sign_id`)";
 $result = $con->query($sql);
 for ($x = 0; $x < $result->num_rows; $x++) {
     $row = $result->fetch_assoc();
-    echo "<img id='painting' src=".$row['images_painting'].">";
-}     
+    echo "<img id='painting' src=" . $row['images_painting'] . ">";
+}
 ?>
