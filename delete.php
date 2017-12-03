@@ -20,7 +20,7 @@ echo "This is a result of a switch" . "<br>" . "<br>";
 $varSwitch = "choice";
 switch ($varSwitch) {
     case "choice":
-        echo "You deleted a paiting";
+        echo "You deleted a paiting"."<br>";
         break;
     case "no choice":
         echo "Are you sure you want to delete this painting";
@@ -32,7 +32,7 @@ echo "<br>";
 echo "This is a result of an if.. ifelse...else" . "<br>" . "<br>";
 
 if ($varSwitch == "choice") {
-    echo "You deleted a painting";
+    echo "You deleted a painting"."<br>";
 } elseif ($varSwitch == "no choice") {
     echo "Are you sure you want to delete this painting";
 } else {
@@ -41,7 +41,7 @@ if ($varSwitch == "choice") {
 
 echo "<br>";
 echo "<br>";
-echo "<br>" . "Here you find a Class, Method, Object, Constructor, Inheritance" . "<br>";
+echo "<br>" . "Here you find a Class, Method, Object, Constructor, Inheritance, etc." . "<br>";
 
 $artwork1Object = new Artwork;
 $artwork2 = new Artwork;
@@ -105,6 +105,15 @@ class Owner1 extends Title1 {
 }
 
 $buyer = new Owner1('Damien Hirst',2);
+$buyer=new Owner1('Marlene Dumas',3); //methods wordt overschreven
 echo "Another artist is ". $buyer->getBuyer();
+
+
+interface ArtistD
+{
+    const nameH = "<br>".'Damien Hirst';
+}
+
+echo ArtistD::nameH;
 ?>
 
