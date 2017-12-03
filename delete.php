@@ -14,13 +14,12 @@ if (mysqli_query($con, $sql))
 else
     echo "This painting can't be deleted.";
 
-
 echo "This is a result of a switch" . "<br>" . "<br>";
 
 $varSwitch = "choice";
 switch ($varSwitch) {
     case "choice":
-        echo "You deleted a paiting"."<br>";
+        echo "You deleted a paiting" . "<br>";
         break;
     case "no choice":
         echo "Are you sure you want to delete this painting";
@@ -32,7 +31,7 @@ echo "<br>";
 echo "This is a result of an if.. ifelse...else" . "<br>" . "<br>";
 
 if ($varSwitch == "choice") {
-    echo "You deleted a painting"."<br>";
+    echo "You deleted a painting" . "<br>";
 } elseif ($varSwitch == "no choice") {
     echo "Are you sure you want to delete this painting";
 } else {
@@ -80,38 +79,36 @@ class Artwork {
     function __construct() {
         print "Red, yellow, blue" . "<br>";
     }
-
 }
 
 class Title1 {
+
     protected $_paint;
 
-      public function __construct($name) {
+    public function __construct($name) {
         $this->_paint = $name;
     }
-
     public function getBuyer() {
         return $this->_paint;
     }
 }
 
 class Owner1 extends Title1 {
+
     private $_title;
-    
+
     public function __construct($paint, $title) {
         $this->_paint = $paint;
         $this->_title = $title;
     }
 }
 
-$buyer = new Owner1('Damien Hirst',2);
-$buyer=new Owner1('Marlene Dumas',3); //methods wordt overschreven
-echo "Another artist is ". $buyer->getBuyer();
+$buyer = new Owner1('Damien Hirst', 2);
+$buyer = new Owner1('Marlene Dumas', 3); //methods wordt overschreven
+echo "Another artist is " . $buyer->getBuyer();
 
-
-interface ArtistD
-{
-    const nameH = "<br>".'Damien Hirst';
+interface ArtistD {
+    const nameH = "<br>" . 'Damien Hirst';
 }
 
 echo ArtistD::nameH;

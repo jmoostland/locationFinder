@@ -10,24 +10,6 @@ include 'dry.php';
         <title>Collection</title>
         <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">  
         <script src="functions.js"></script>
-        <style>
-            #index{
-                font-family:Arial;
-                font-size: 150px;
-                border-radius:15px;
-                background:gainsboro;
-                padding-left: 110px;
-                padding-right: 110px;
-                position: fixed; left: 0; top: 10px;
-            }
-            #buttonloc{
-                padding: 15px 32px;
-                margin: 80px 50px;
-                border-radius:10px;
-                background: whitesmoke;
-                box-shadow: 5px 5px 2px #333333;
-            }
-        </style>
     </head>
     <body>
         <form name="iets" action="painting.php" method="GET"></form>
@@ -44,4 +26,3 @@ for ($p = 0; $p < $result->num_rows; $p++) {
     echo "<img id='painting' onclick='artButton(".$row['id'].")' src=" . $row['images_painting'] . ">";
 }
 ?>
-

@@ -19,15 +19,7 @@
                 padding-top: 50px;
                 padding-bottom: 50px; 
             }
-            #painting{
-                justify-content:space-around;
-                width:250px;
-                margin-top:30px;
-                flex-direction: row;
-                margin-left: 180px;
-                margin-right: 15px;
-            }
-            #index{
+            .index{
                 font-family:Arial;
                 font-size: 150px;
                 border-radius:15px;
@@ -35,6 +27,14 @@
                 padding-left: 110px;
                 padding-right: 110px;
                 position: fixed; left: 0; top: 10px;
+            }
+            #painting{
+                justify-content:space-around;
+                width:250px;
+                margin-top:30px;
+                flex-direction: row;
+                margin-left: 180px;
+                margin-right: 15px;
             }
             #buttonloc{
                 padding: 15px 32px;
@@ -54,7 +54,7 @@
     </head>
     <body>
         <form>
-            <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
+            <header><input class="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>    
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
         </form>

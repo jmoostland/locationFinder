@@ -1,5 +1,4 @@
 <?php
-
 function connectionDB() {
 
     $hostname = 'localhost'; 
@@ -10,5 +9,4 @@ function connectionDB() {
     $conn = new mysqli($hostname, $username, $password, $databasenaam);
     return $conn;  
 }
-
 ?>
