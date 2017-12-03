@@ -64,7 +64,7 @@ for ($x = 0; $x < count($artWork); $x++) {
 }
 
 function ArtWorkShow($artworks) {
-    echo "The artworks of the artist " . $artworks->artist;
+    echo "The artwork of the artist " . $artworks->artist;
     echo " in the location " . $artworks->space;
     echo " has the color " . $artworks->color;
     echo "<br>";

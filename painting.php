@@ -52,6 +52,12 @@ include 'connection.php';
                 background: whitesmoke;
                 box-shadow: 5px 5px 2px #333333;
             }
+            #buttonsubmit{
+                padding: 5px 5px;
+                border-radius:10px;
+                background: whitesmoke;
+                box-shadow: 5px 5px 2px #333333;
+            }
         </style>
     </head>
     <body>
@@ -89,14 +95,14 @@ include 'connection.php';
         ?>
 
         <form method="GET" action="edit.php" id="changeLoc" onchange="changeSubmit">
-            <select name="location_id">
+            <select id='buttonsubmit' name="location_id">
                 <option value = "Entrance">Entrance</option>
                 <option value = "Foyer">Foyer</option>
                 <option value = "Cafe">Cafe</option>
                 <option value = "Shop">Shop</option>
                 <option value = "Stockroom">Stockroom</option>
             </select>
-            <input type=submit>
+            <input type=submit id='buttonsubmit'>
         </form>      
     </body>
 </html>
