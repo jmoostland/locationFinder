@@ -37,6 +37,3 @@ $returnString = <<<HEADSTRING
                 <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
             </form>
 
-<!--HEADSTRING;
-    return $returnString;
-}-->

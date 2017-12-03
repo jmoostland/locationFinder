@@ -50,7 +50,7 @@ include 'connection.php';
 $con = new mysqli('localhost', 'root', '', 'kunst');
 
 
-$sql = "SELECT * FROM `kunstwerk`"; //bij de echo zeg je wat je uit kunstwerk wilt hebben, het is niet nodig om dit te specificeren.
+$sql = "SELECT * FROM `kunstwerk`"; //bij de echo zeg je wat je uit kunstwerk wilt hebben, het is niet nodig om dit hier te specificeren.
 $result = $con->query($sql);
 
 for ($p = 0; $p < $result->num_rows; $p++) {

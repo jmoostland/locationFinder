@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include 'connection.php';
 ?>
 
@@ -67,7 +66,7 @@ include 'connection.php';
         if ($row2 = $result2->fetch_assoc()) {
             echo "Location:" . $row2['location_id'] . "<br>";
         }
-
+        
         $zoekIdSchilderij = "";
 
             echo "Artwork ID:" . $row['sign_id'] . "<br>" . " Title:" . $row['title'] . "<br>" . "Artist:" . $row['artist'] . "<br>" . "Year:" . $row['year'] . "<br>";
@@ -77,7 +76,9 @@ include 'connection.php';
 
         $_SESSION['zoekIdSchilderij'] = $zoekIdSchilderij;
         ?>
-        <form method="GET" action="edit.php">
+        
+        <p id="change"></p>
+        <form method="GET" action="edit.php" id="changeLoc" onchange="changeSubmit">
             <select name="location_id">
                 <option value = "Entrance">Entrance</option>
                 <option value = "Foyer">Foyer</option>
@@ -88,49 +89,29 @@ include 'connection.php';
             <input type=submit>
 
 
+            //<?php
+//            if (isset($_REQUEST['sign_id'])) {
+//                $inloggen = new mysqli('localhost', 'root', '', 'kunst');
+//                $sign = $_REQUEST ['sign_id'];
+//                $location_id = $_REQUEST ['location_id'];
+//                $sql = "UPDATE `linktable` SET `location_id`='Entrance' WHERE `location_id`='Foyer'";
+//                $inloggen->query($sql);
 
+//                while ($row = mysqli_fetch_array($result)) {
+//                    echo "<tr>";
+//                    echo "<td>" . $result['location_id'] . "</td>";
+//                    echo "<td>" . $result['sign_id'] . "</td>";
+//                    echo "<td><a href=edit.php?location_id=" . $row['location_id'] . ">Edit</a><td>";
+//                }
+//            }
+       
 
-
-
-            <?php
-            if (isset($_REQUEST['sign_id'])) {
-                $inloggen = new mysqli('localhost', 'root', '', 'kunst');
-                $sign = $_REQUEST ['sign_id'];
-                $location_id = $_REQUEST ['location_id'];
-                $sql = "UPDATE `linktable` SET `location_id`='Entrance' WHERE `location_id`='Foyer'";
-                $inloggen->query($sql);
-
-                while ($row = mysqli_fetch_array($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $result['location_id'] . "</td>";
-                    echo "<td>" . $result['sign_id'] . "</td>";
-                    echo "<td><a href=edit.php?location_id=" . $row['location_id'] . ">Edit</a><td>";
-                }
-            }
-
-
-
-//                        echo "<td><a href=\"edit.php?id=$result[id]\">Edit</a></td>";
-//}        
-//            echo "<tr>";
-//            echo "<td>".$res['name']."</td>";
-//            echo "<td>".$res['age']."</td>";
-//            echo "<td>".$res['email']."</td>";    
-//            echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a>
-            //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
-//        while($res = mysqli_fetch_array($result)) {         
-//            echo "<tr>";
-//            echo "<td>".$res['name']."</td>";
-//            echo "<td>".$res['age']."</td>";
-//            echo "<td>".$res['email']."</td>";    
-//            echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";        
-//        }
 //            while ($row = mysqli_fetch_array($result)) {
 //                echo "Location:" . $row['location_id'] . "<br>";
 //                echo "<td><a href=edit.php?location_id=" . $row['location_id'] . ">Edit</a><td>";
 //                echo "<img id='painting' onclick='updateButton(" . $row['location_id'] . ")' src=" . $row['images_painting'] . ">";
 //            }
-            ?>
+//            ?>
         </form>      
     </body>
 

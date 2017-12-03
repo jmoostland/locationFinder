@@ -16,8 +16,7 @@ if (mysqli_query($con, $sql)) {
 //        header("refresh:1; url=painting.php");
         header("location:collection.php");
 } else {
-    echo "This painting can't be deleted.";
+    echo "This painting can't be moved.";
 }
 ?>
-
 

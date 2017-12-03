@@ -19,7 +19,7 @@ if (isset($_REQUEST['artId'])) {
     $sql = "INSERT INTO `kunstwerk` (`sign_id`, `title`, `artist`, `year`,`images_painting`,`information`,`materials`,`medium`) VALUES ('$sign', '$title', '$artist', '$year','$images_painting', '$information', '$materials', '$medium')";
     $inloggen->query($sql);
 }
-//   foreach ($materials as $mat){}
+
 ?>
 
 <html>
@@ -73,8 +73,6 @@ if (isset($_REQUEST['artId'])) {
                 <td><input type="submit" name="registration" value="Insert"><br><br></td>
             </tr>
         </table></form>
-
-
 
         <?php
         if ($_FILES) {

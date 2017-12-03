@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include 'connection.php';
 ?>
 
@@ -45,7 +44,7 @@ $sql = "SELECT * FROM `kunstwerk`";
 
 if ($result = mysqli_query($con, $sql)) {
 
-    while ($row = mysqli_fetch_assoc($result)) {        //lus
+    while ($row = mysqli_fetch_assoc($result)) {        //lus en maakt van een rij resultaten een associatieve array.
         echo "Title:".$row['title']."<br>";
         echo "Artist:".$row['artist']."<br>";
         echo "Year:".$row['year']."<br>";

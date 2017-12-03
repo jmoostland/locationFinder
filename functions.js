@@ -42,3 +42,7 @@ function normalPainting(x) {
     x.style.width = "200px";
 }
 
+//function changeSubmit(){
+//    var x=document.getElementById("changeLoc").value;
+//    document.getElementById("change").innerHTML="You selected: "+x;
+//}
