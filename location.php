@@ -8,8 +8,7 @@ $con = new mysqli('localhost', 'root', '', 'kunst');
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Location</title>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">   
+        <title>Location</title>  
         <script src="functions.js"></script>
         <style>
             #col{

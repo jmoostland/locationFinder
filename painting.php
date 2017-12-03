@@ -5,10 +5,25 @@ include 'connection.php';
 
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">
         <script src="functions.js"></script>
         <style>
-            #index{
+            body {
+                font-family:Arial;
+                display:block;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: gray;
+            }
+            header{
+                color: graytext;
+                text-align: center;
+                font-family:Arial;
+                font-size: 100px;
+                letter-spacing: 5px;
+                padding-top: 50px;
+                padding-bottom: 50px; 
+            }
+            #in{
                 font-family:Arial;
                 font-size: 150px;
                 border-radius:15px;
@@ -41,7 +56,7 @@ include 'connection.php';
     </head>
     <body>
         <form>
-            <header><input id="index" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
+            <header><input id="in" onClick="indexButton()" type="button" Value="LOCATION FINDER"></header>
             <button type="button" id="buttonloc" onclick="locationButton()">LOCATION</button>
             <button type="button" id="buttoncol" onclick="collectionButton()">COLLECTION</button>
             <button type="button" id="buttonreg" onclick="registrationButton()">ADD NEW ARTWORK</button>

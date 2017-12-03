@@ -20,7 +20,6 @@ if (isset($_REQUEST['artId'])) {
 
 <html>
     <head>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">
         <script src="functions.js"></script>
         <style>
             input{
@@ -43,8 +42,8 @@ if (isset($_REQUEST['artId'])) {
                 <tr><td>Medium</td><td><input type="radio" name="medium" value="Painting"> Painting<br>
                         <input type="radio" name="medium" value="Work on paper"> Work on paper<br>
                         <input type="radio" name="medium" value="Other"> Other<br></td></tr>
-                <tr><td>More information</td><td><textarea type='text' rows="4"cols="20" name='information' ></textarea><br></td></tr>
-                <tr><td><input type="submit" name="registration" value="Insert"><br><br></td></tr>
+                <tr><td>More information</td><td><textarea type='text' border-radius='10px' rows="4"cols="20" name='information' ></textarea></td></tr>
+                <tr><td><input type="submit" id="buttonloc" name="registration" value="Insert"></td></tr>
             </table></form>
 
         <?php

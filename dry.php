@@ -1,6 +1,5 @@
 <html>
-    <head>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">  
+    <head> 
         <script src="functions.js"></script>
         <style>
             body {
@@ -45,7 +44,7 @@
             }
             #buttoncol{
                 padding: 15px 32px;
-                margin: 80px 50px;
+                /*margin: 80px 50px;*/
                 border-radius:10px;
                 background: whitesmoke;
                 box-shadow: 5px 5px 2px #333333;
