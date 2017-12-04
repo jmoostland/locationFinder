@@ -7,8 +7,7 @@ include 'dry.php'
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Start page</title>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">   
+        <title>Start page</title>   
         <script src="functions.js"></script>
         <style>
             #wit {

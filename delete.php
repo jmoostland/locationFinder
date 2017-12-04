@@ -10,7 +10,7 @@ if ($con->connect_error) {
 $sql = "DELETE FROM kunstwerk WHERE id='$_GET[id]'";
 
 if (mysqli_query($con, $sql))
-    header("refresh:10; url=collection.php");
+    header("refresh:2; url=collection.php");
 else
     echo "This painting can't be deleted.";
 

@@ -8,7 +8,6 @@ include 'dry.php';
     <head>
         <meta charset="UTF-8">
         <title>Collection</title>
-        <link rel = "stylesheet" type = "text/css" href="buttonOpmaak.css">  
         <script src="functions.js"></script>
     </head>
     <body>
